@@ -41,7 +41,7 @@ npm install bitgesell-core --save
 
 ### Examples
 #### Using network mode
-The `network` will automatically determine the port to connect to, just like the `BGLd` and `bitcoin-cli` commands.
+The `network` will automatically determine the port to connect to, just like the `BGLd` and `BGL-cli` commands.
 
 ```js
 const Client = require('bitgesell-core');
@@ -140,10 +140,10 @@ Since Bitgesell Core v0.1.10, it's possible to manage multiple wallets using a s
 
 Historically, the _accounts_ feature was supposed to offer similar functionality, but it has now been replaced by this more powerful feature.
 
-To enable Multi Wallet support, start by specifying the number of added wallets you would like to have available and loaded on the server using the `-wallet` argument multiple times. For convenience, the bitgesell-core docker image will be used, but it's not a requirement:
+To enable Multi Wallet support, start by specifying the number of added wallets you would like to have available and loaded on the server using the `-wallet` argument multiple times:
 
 ```sh
-docker run --rm -it -p 18332:18332 ruimarinho/bitgesell-core:0.15-alpine \
+bin/BGLd \
   -printtoconsole \
   -server \
   -rpcauth='foo:e1fcea9fb59df8b0388f251984fe85$26431097d48c5b6047df8dee64f387f63835c01a2a463728ad75087d0133b8e6' \
@@ -219,12 +219,12 @@ To avoid potential issues with prototype references, all methods are still enume
 Start the `BGLd` with the RPC server enabled and optionally configure a username and password:
 
 ```sh
-docker run --rm -it ruimarinho/bitgesell-core:0.12-alpine -printtoconsole -rpcuser=foo -rpcpassword=bar -server
+bin/BGLd -printtoconsole -rpcuser=foo -rpcpassword=bar -server
 ```
 
-These configuration values may also be set on the `bitcoin.conf` file of your platform installation.
+These configuration values may also be set on the `BGL.conf` file of your platform installation.
 
-By default, port `8332` is used to listen for requests in `mainnet` mode, or `18332` in `testnet` and `regtest` modes (the regtest change will be changed to `18443` in [0.16](https://github.com/bitcoin/bitcoin/pull/10825)). Use the `network` property to initialize the client on the desired mode and automatically set the respective default port. You can optionally set a custom port of your choice too.
+By default, port `8454` is used to listen for requests in `mainnet` mode, or `18332` in `testnet` mode. Use the `network` property to initialize the client on the desired mode and automatically set the respective default port. You can optionally set a custom port of your choice too.
 
 The RPC services binds to the localhost loopback network interface, so use `rpcbind` to change where to bind to and `rpcallowip` to whitelist source IP access.
 
@@ -436,7 +436,7 @@ npm test
 
 ## 
 All contributions are welcome!
-This is a fork of [bitcoin-core]() package
+This is the Bitgesell RPC client maintained at [BitgesellOfficial/js-bitgesellcore-rpc](https://github.com/BitgesellOfficial/js-bitgesellcore-rpc). It is derived from the [bitcoin-core](https://github.com/ruimarinho/bitcoin-core) package.
 
 ## License
 MIT
