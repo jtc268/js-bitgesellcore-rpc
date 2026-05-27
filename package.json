@@ -10,8 +10,8 @@
     "rest",
     "rpc"
   ],
-  "homepage": "https://github.com/naftalimurgor/bitgesell-core",
-  "bugs": "https://github.com/naftalimurgor/bitgesell-core/issues",
+  "homepage": "https://github.com/BitgesellOfficial/js-bitgesellcore-rpc#readme",
+  "bugs": "https://github.com/BitgesellOfficial/js-bitgesellcore-rpc/issues",
   "license": "MIT",
   "author": {
     "name": "Naftali Murgor",
@@ -20,10 +20,10 @@
   "main": "src/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/naftalimurgor/bitgesell-core.git"
+    "url": "https://github.com/BitgesellOfficial/js-bitgesellcore-rpc.git"
   },
   "scripts": {
-    "changelog": "github_changelog_generator --project bitcoin-core --user ruimarinho --no-issues --header-label='# Changelog' --future-release=$npm_config_future_release && sed -i '' -e :a -e '$d;N;2,4ba' -e 'P;D' CHANGELOG.md",
+    "changelog": "github_changelog_generator --project js-bitgesellcore-rpc --user BitgesellOfficial --no-issues --header-label='# Changelog' --future-release=$npm_config_future_release && sed -i '' -e :a -e '$d;N;2,4ba' -e 'P;D' CHANGELOG.md",
     "cover": "nyc --reporter=html --reporter=text npm test",
     "dependencies": "docker-compose up -d BGLd BGLd-ssl BGLd-username-only",
     "lint": "eslint src test",
